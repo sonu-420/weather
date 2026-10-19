@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCast | Weather Forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="grid-noise"></span>
+  </div>
+
+  <main class="app">
+    <header class="hero reveal">
+      <p class="eyebrow">Live Forecast</p>
+      <h1>SkyCast Weather</h1>
+      <p class="tagline">Track current conditions and a 7-day forecast anywhere in the world.</p>
+    </header>
+
+    <section class="controls reveal" aria-label="Weather search">
+      <form id="search-form" class="search-form">
+        <label for="city-input" class="sr-only">Search city</label>
+        <input id="city-input" name="city" type="text" placeholder="Search city (e.g., Sultanpur)" autocomplete="off" />
+        <button type="submit">Search</button>
+      </form>
+      <button id="location-btn" class="ghost-btn" type="button">Use My Location</button>
+    </section>
+
+    <p id="status" class="status reveal" role="status" aria-live="polite"></p>
+
+    <section class="current card reveal" aria-label="Current weather">
+      <div class="current-head">
+        <div>
+          <p id="location-name" class="location-name">Loading...</p>
+          <p id="local-time" class="local-time"></p>
+        </div>
+        <p id="condition" class="condition"></p>
+      </div>
+      <div class="temperature-row">
+        <p id="temperature" class="temperature">--</p>
+        <p id="feels-like" class="feels-like"></p>
+      </div>
+      <div id="highlights" class="highlights"></div>
+    </section>
+
+    <section class="hourly card reveal" aria-label="Hourly forecast">
+      <h2>Next 12 Hours</h2>
+      <div id="hourly-list" class="hourly-list"></div>
+    </section>
+
+    <section class="daily card reveal" aria-label="7 day forecast">
+      <h2>7 Day Forecast</h2>
+      <div id="daily-list" class="daily-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Made by Sonu Yadav</footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
